@@ -1,0 +1,45 @@
+openapi: 3.0.3
+info:
+  title: Legalytics API
+  version: 0.1.0
+servers:
+  - url: http://localhost:3000/v1
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: Service health
+  /sales-analytics/kpis:
+    get:
+      summary: Dashboard KPIs
+      responses:
+        "200":
+          description: KPI payload
+  /crm/leads:
+    post:
+      summary: Create lead
+      requestBody:
+        required: true
+      responses:
+        "201":
+          description: Lead created
+  /crm/pipeline:
+    get:
+      summary: Pipeline overview
+      responses:
+        "200":
+          description: Stage totals
+  /ai-integration/sentiment:
+    post:
+      summary: Sentiment analysis
+      responses:
+        "201":
+          description: Sentiment output
+  /ai-integration/close-probability:
+    post:
+      summary: Closing probability and recommendation
+      responses:
+        "201":
+          description: Probability output
